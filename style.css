@@ -1,0 +1,31 @@
+.scene {
+  width: 100vw;
+  height: 100vw;
+}
+.sheet {
+  position: absolute;
+}
+
+.s2 {
+  transform: translateY(15px);
+}
+.s3 {
+  transform: translateY(30px);
+}
+
+.s4 {
+  transform: translateY(45px);
+  animation: 2s go-out ease-in-out infinite alternate;
+}
+
+@keyframes go-out {
+  0% {
+    opacity: 1;
+    transform: translateY(45px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) translateX(-200px);
+  }
+}
