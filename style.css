@@ -9,6 +9,7 @@ KEYFRAMES
       BLOCK BARCODE
       BLOCK OUT
       SLABS EXPAND
+      SLABS FADE
     
 STYLES
     CONTAINERS
@@ -27,7 +28,7 @@ STYLES
   --scene-prep: calc(1.5 * var(--time-unit));
   --block-barcode: calc(1.8 * var(--time-unit));
   --block-out: calc(2.5 * var(--time-unit));
-  --slab-expand: calc(2.5 * var(--time-unit));
+  --slab-expand: calc(4 * var(--time-unit));
 }
 
 /******************** KEYFRAMES ********************/
@@ -74,65 +75,85 @@ STYLES
 
 /* SLABS EXPAND */
 @keyframes slab-expand-6 {
-  from {
+  38% {
     transform: translateY(-4px);
   }
-  60% {
-    transform: translateY(-4px);
-  }
-
-  to {
+  63% {
     transform: translateY(-161px);
+  }
+  70% {
+    transform: translateY(-161px);
+  }
+  to {
+    transform: translateY(-500px) translateX(-500px);
   }
 }
 @keyframes slab-expand-5 {
-  from {
+  38% {
     transform: translateY(-4px);
   }
-  60% {
-    transform: translateY(-4px);
-  }
-
-  to {
+  63% {
     transform: translateY(-128px);
+  }
+  72% {
+    transform: translateY(-128px);
+  }
+  to {
+    transform: translateY(-433px) translateX(-450px);
   }
 }
 @keyframes slab-expand-4 {
-  from {
+  38% {
     transform: translateY(-4px);
   }
-  60% {
-    transform: translateY(-4px);
-  }
-
-  to {
+  63% {
     transform: translateY(-95px);
+  }
+  73% {
+    transform: translateY(-95px);
+  }
+  to {
+    transform: translateY(-366px) translateX(-400px);
   }
 }
 @keyframes slab-expand-3 {
-  from {
+  38% {
     transform: translateY(-4px);
   }
-  60% {
-    transform: translateY(-4px);
-  }
-
-  to {
+  63% {
     transform: translateY(-62px);
+  }
+  74% {
+    transform: translateY(-62px);
+  }
+  to {
+    transform: translateY(-299px) translateX(-350px);
   }
 }
 @keyframes slab-expand-2 {
-  from {
+  38% {
     transform: translateY(-4px);
   }
-  60% {
-    transform: translateY(-4px);
-  }
-
-  to {
+  63% {
     transform: translateY(-29px);
   }
+  75% {
+    transform: translateY(-29px);
+  }
+  to {
+    transform: translateY(-232px) translateX(-300px);
+  }
 }
+/* SLABS FADE */
+@keyframes slabs-fade {
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes main-sheet {
   from {
     transform: translateY(-4px);
@@ -159,13 +180,14 @@ body {
   background-color: rgb(240, 240, 240);
 
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 
 .scene {
   width: var(--w);
   height: var(--h);
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,6 +200,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  animation: slabs-fade var(--slab-expand) var(--scene-prep) ease-in-out
+    forwards;
 }
 
 img {
@@ -208,27 +233,27 @@ img {
 .sheet-2 {
   z-index: 1;
   transform: translateY(-4px);
-  animation: slab-expand-2 var(--slab-expand) var(--scene-prep) ease-out
+  animation: slab-expand-2 var(--slab-expand) var(--scene-prep) ease-in-out
     forwards;
 }
 
 .sheet-3 {
   z-index: 2;
   transform: translateY(-8px);
-  animation: slab-expand-3 var(--slab-expand) var(--scene-prep) ease-out
+  animation: slab-expand-3 var(--slab-expand) var(--scene-prep) ease-in-out
     forwards;
 }
 
 .sheet-4 {
   z-index: 3;
   transform: translateY(-12px);
-  animation: slab-expand-4 var(--slab-expand) var(--scene-prep) ease-out
+  animation: slab-expand-4 var(--slab-expand) var(--scene-prep) ease-in-out
     forwards;
 }
 .sheet-5 {
   z-index: 4;
   transform: translateY(-16px);
-  animation: slab-expand-5 var(--slab-expand) var(--scene-prep) ease-out
+  animation: slab-expand-5 var(--slab-expand) var(--scene-prep) ease-in-out
     forwards;
 }
 
@@ -236,6 +261,6 @@ img {
   z-index: 5;
   transform: translateY(-20px);
 
-  animation: slab-expand-6 var(--slab-expand) var(--scene-prep) ease-out
+  animation: slab-expand-6 var(--slab-expand) var(--scene-prep) ease-in-out
     forwards;
 }
