@@ -10,6 +10,7 @@ KEYFRAMES
       BLOCK OUT
       SLABS EXPAND
       SLABS FADE
+      MAIN SHEET
     
 STYLES
     CONTAINERS
@@ -146,7 +147,7 @@ STYLES
 }
 /* SLABS FADE */
 @keyframes slabs-fade {
-  75% {
+  70% {
     opacity: 1;
   }
   to {
@@ -154,6 +155,7 @@ STYLES
   }
 }
 
+/* MAIN SHEET */
 @keyframes main-sheet {
   from {
     transform: translateY(-4px);
