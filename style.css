@@ -32,6 +32,13 @@ STYLES
   --slab-expand: calc(4 * var(--time-unit));
 }
 
+@media (max-width: 767px) {
+  :root {
+    --w: 100vw;
+    --h: 63vw;
+  }
+}
+
 /******************** KEYFRAMES ********************/
 /* SCENE PREP */
 @keyframes scene-prep {
@@ -77,7 +84,7 @@ STYLES
 /* SLABS EXPAND */
 @keyframes slab-expand-6 {
   38% {
-    transform: translateY(-4px);
+    transform: translateY(-20px);
   }
   63% {
     transform: translateY(-161px);
@@ -91,7 +98,7 @@ STYLES
 }
 @keyframes slab-expand-5 {
   38% {
-    transform: translateY(-4px);
+    transform: translateY(-16px);
   }
   63% {
     transform: translateY(-128px);
@@ -105,7 +112,7 @@ STYLES
 }
 @keyframes slab-expand-4 {
   38% {
-    transform: translateY(-4px);
+    transform: translateY(-12px);
   }
   63% {
     transform: translateY(-95px);
@@ -119,7 +126,7 @@ STYLES
 }
 @keyframes slab-expand-3 {
   38% {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
   }
   63% {
     transform: translateY(-62px);
@@ -209,8 +216,8 @@ body {
 
 img {
   position: absolute;
-  width: 631px;
-  height: 400px;
+  width: var(--w);
+  height: var(--h);
 }
 
 .block {
