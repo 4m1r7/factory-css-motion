@@ -2,7 +2,7 @@ const trigger = document.getElementById("stream");
 const canvas = document.getElementById("scene");
 const context = canvas.getContext("2d");
 
-const frameCount = 354;
+const frameCount = 160;
 const currentFrame = (index) => `assets/image-sequence-${index}.jpg`;
 
 const preloadImages = () => {
@@ -14,8 +14,8 @@ const preloadImages = () => {
 
 const img = new Image();
 img.src = currentFrame(1);
-canvas.width = 1440;
-canvas.height = 900;
+canvas.width = 685;
+canvas.height = 511;
 img.onload = function () {
   context.drawImage(img, 0, 0);
 };

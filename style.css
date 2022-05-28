@@ -18,12 +18,15 @@ body {
 }
 
 #stream {
-  height: 900vh;
+  height: 500vh;
+  display: flex;
+  justify-content: center;
+  background-color: #111;
 }
 
 canvas {
   position: sticky;
-  top: 0;
-  width: 95vw;
-  aspect-ratio: 1.571;
+  top: calc(50vh - 260px);
+  width: 685;
+  height: 511;
 }
